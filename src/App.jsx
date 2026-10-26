@@ -55,22 +55,23 @@ export const STATS_DATA = [
 
 export const FEATURED_TOOLS = [
   { name: 'Angular', role: 'v8 – 21, Signals, Standalone', iconType: 'angular' },
-  { name: 'React.js', role: 'Modern Hooks, Ecosystem', iconType: 'react' },
-  { name: 'Next.js', role: 'SSR, App Router, Hybrid', iconType: 'nextjs' },
-  { name: 'TypeScript', role: 'Strict Typing, Interfaces', iconType: 'typescript' },
-  { name: 'JavaScript', role: 'ES6+, Async, DOM & Web APIs', iconType: 'javascript' },
-  { name: 'HTML5', role: 'Semantic Markup, A11y, SEO', iconType: 'html5' },
-  { name: 'CSS3 / SCSS', role: 'Flexbox, Grid, Animations', iconType: 'css3' },
+  { name: 'RxJS / NgRx', role: 'Reactive State & Observables', iconType: 'rxjs' },
   { name: 'Angular Material', role: 'Material 3, CDK, Theming', iconType: 'material' },
   { name: 'PrimeNG', role: 'Enterprise UI Suite, DataTables', iconType: 'primeng' },
+  { name: 'React.js', role: 'Modern Hooks, Ecosystem', iconType: 'react' },
+  { name: 'Next.js', role: 'SSR, App Router, Hybrid', iconType: 'nextjs' },
+  { name: 'Redux / Toolkit', role: 'RTK, Global State, Slices', iconType: 'redux' },
+  { name: 'TypeScript', role: 'Strict Typing, Interfaces', iconType: 'typescript' },
+  { name: 'JavaScript', role: 'ES6+, Async, DOM & Web APIs', iconType: 'javascript' },
   { name: 'Bootstrap', role: 'Responsive Grid & UI Components', iconType: 'bootstrap' },
+  { name: 'HTML5', role: 'Semantic Markup, A11y, SEO', iconType: 'html5' },
+  { name: 'CSS3 / SCSS', role: 'Flexbox, Grid, Animations', iconType: 'css3' },
   { name: 'Node.js', role: 'Express, REST, APIs', iconType: 'nodejs' },
   { name: 'Python', role: 'FastAPI, Data Science', iconType: 'python' },
   { name: 'MySQL', role: 'Relational DB, Queries & Indexing', iconType: 'mysql' },
   { name: 'MongoDB', role: 'NoSQL, Aggregations & Atlas', iconType: 'mongodb' },
   { name: 'Docker', role: 'Containers, Compose & CI/CD', iconType: 'docker' },
-  { name: 'Firebase', role: 'Firestore, Auth, PWA', iconType: 'firebase' },
-  { name: 'RxJS / NgRx', role: 'Reactive State & Observables', iconType: 'rxjs' }
+  { name: 'Firebase', role: 'Firestore, Auth, PWA', iconType: 'firebase' }
 ];
 
 export const TOOLBOX_CATEGORIES = [
@@ -93,14 +94,21 @@ export const TOOLBOX_CATEGORIES = [
     category: 'UI & State Management',
     icon: 'state',
     skills: [
-      'Angular Material',
-      'PrimeNG',
-      'Bootstrap',
-      'RxJS',
-      'NgRx',
-      'BehaviorSubject',
-      'Observables',
-      'Reactive Programming'
+      'Angular Signals (signal, computed, effect)',
+      'NgRx (Store, Effects, Entity)',
+      'RxJS (Observables, Subjects, Operators)',
+      'BehaviorSubject State Services',
+      'Angular Material (Material 3, CDK)',
+      'PrimeNG Enterprise Suite',
+      'Reactive Programming',
+      'Redux Toolkit (RTK)',
+      'RTK Query',
+      'createSlice & Reducers',
+      'Async Thunks (createAsyncThunk)',
+      'Reselect (Memoized Selectors)',
+      'Redux Store & Middleware',
+      'React Context & Hooks',
+      'Bootstrap 5'
     ]
   },
   {
@@ -439,18 +447,16 @@ function TechIcon({ type }) {
       );
     case 'firebase':
       return (
-        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19.4 97.4L3.6 67.2c-1.3-2.5-.3-5.6 2.2-6.9 1.1-.6 2.4-.7 3.6-.3l10 37.4z" fill="#FFA000" />
-          <path d="M19.4 97.4L64 123.1 9.4 97.4z" fill="#F57C00" />
-          <path d="M64 123.1l44.6-25.7L94.2 46.1c-.8-2.7-3.7-4.2-6.4-3.4-1.2.4-2.2 1.2-2.7 2.3L64 90.7 44.5 53.6c-1.3-2.5-.3-5.6 2.2-6.9 1.1-.6 2.4-.7 3.6-.3l13.7 51z" fill="#FFCA28" />
-          <path d="M108.6 97.4L64 123.1l44.6-25.7z" fill="#FFA000" />
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.89 15.673L6.255.461A.542.542 0 0 1 7.27.289L9.813 5.06 3.89 15.673z" fill="#FFA000" />
+          <path d="M14.3 7.148l-1.82-3.482a.542.542 0 0 0-.96 0L3.53 17.984 14.3 7.148z" fill="#F57C00" />
+          <path d="M20.685 19.364L18.433 5.365a.543.543 0 0 0-.918-.295l-14.2 14.294 7.857 4.428a1.62 1.62 0 0 0 1.587 0l7.926-4.428z" fill="#FFCA28" />
         </svg>
       );
     case 'mysql':
       return (
         <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#00758F" d="M115.5 69.3c-1.1-.3-6.5-1.9-10.4 2.1-4.7 4.8-3.4 12.9-1.9 17.5.3 1.1.2 1.4-.4 1.7-2.6 1.4-7.2 2.6-11.4.7-6.2-2.8-6.7-9.5-6.6-12.8.2-5.4 2.2-10.2 4.1-14.9 2.5-6.1 5.3-12.5 5.5-19.4.1-3.6-.8-8.1-3.8-10.5-3.3-2.6-8-2.6-11.7-1.8-6.9 1.5-12.7 5.7-17.5 10.7-9.7 10.1-15.3 23.3-22.1 35.8-2.5 4.6-5.5 9.4-9.8 12.4-5.2 3.6-12.1 4.5-18.1 2.3-4.1-1.5-7.7-4.5-9.8-8.4-2.8-5.2-3.1-11.7-1.3-17.3 1.9-5.9 6-10.7 11.2-13.8 5.7-3.4 12.6-4.5 19.1-3.3 2.1.4 4.3 1 6.3 1.9 1.1.5 2.3-.2 2.3-1.4 0-.8-.5-1.5-1.3-1.8-4.2-1.7-8.8-2.5-13.4-2.3-7.8.3-15.5 3.3-21.1 8.8-6.1 6-9.5 14.3-9.5 22.9 0 7.3 2.6 14.6 7.4 20.1 5.5 6.3 13.8 9.8 22.2 9.4 8.7-.4 16.8-4.8 22.3-11.5 5.2-6.3 8.3-14.1 11.8-21.8 5.5-12.1 11.8-24.1 21.6-33.4 4.1-3.9 9-6.9 14.6-7.9 4-.7 8.3-.3 11.8 1.9 3.5 2.2 5 6.5 4.8 10.6-.3 6.4-3 12.2-5.4 18-2.2 5.3-4.5 10.8-4.8 16.7-.4 7.6 3.1 15.1 10.1 18.4 5.7 2.7 12.5 2.1 17.8-.8 3.5-1.9 5.8-5.3 7-9.1 1.6-4.9 1.9-10.4.4-15.4-1.1-3.5-3.6-7.3-7.2-8.3z"/>
-          <path fill="#F29111" d="M49.2 44.5c2.8-1.5 6-2.1 9.1-1.7 3.3.4 6.4 1.8 8.8 4.1 1.2 1.1 3 .9 4.1-.3 1.1-1.2.9-3-.3-4.1-3.3-3.1-7.6-5-12-5.5-4.2-.5-8.6.3-12.4 2.3-1.4.7-2 2.5-1.2 3.9.7 1.4 2.4 2 3.9 1.3z"/>
+          <path fill="#00618A" d="M117.688 98.242c-6.973-.191-12.297.461-16.852 2.379-1.293.547-3.355.559-3.566 2.18.711.746.82 1.859 1.387 2.777 1.086 1.754 2.922 4.113 4.559 5.352 1.789 1.348 3.633 2.793 5.551 3.961 3.414 2.082 7.223 3.27 10.504 5.352 1.938 1.23 3.859 2.777 5.75 4.164.934.684 1.563 1.75 2.773 2.18v-.195c-.637-.812-.801-1.93-1.387-2.777l-2.578-2.578c-2.52-3.344-5.719-6.281-9.117-8.719-2.711-1.949-8.781-4.578-9.91-7.73l-.199-.199c1.922-.219 4.172-.914 5.949-1.391 2.98-.797 5.645-.59 8.719-1.387l4.164-1.187v-.793c-1.555-1.594-2.664-3.707-4.359-5.152-4.441-3.781-9.285-7.555-14.273-10.703-2.766-1.746-6.184-2.883-9.117-4.363-.988-.496-2.719-.758-3.371-1.586-1.539-1.961-2.379-4.449-3.566-6.738-2.488-4.793-4.93-10.023-7.137-15.066-1.504-3.437-2.484-6.828-4.359-9.91-9-14.797-18.687-23.73-33.695-32.508-3.195-1.867-7.039-2.605-11.102-3.57l-6.543-.395c-1.332-.555-2.715-2.184-3.965-2.977C16.977 3.52 4.223-3.312.539 5.672-1.785 11.34 4.016 16.871 6.09 19.746c1.457 2.012 3.32 4.273 4.359 6.539.688 1.492.805 2.984 1.391 4.559 1.438 3.883 2.695 8.109 4.559 11.695.941 1.816 1.98 3.727 3.172 5.352.727.996 1.98 1.438 2.18 2.973-1.227 1.715-1.297 4.375-1.984 6.543-3.098 9.77-1.926 21.91 2.578 29.137 1.383 2.223 4.641 6.98 9.117 5.156 3.918-1.598 3.043-6.539 4.164-10.902.254-.988.098-1.715.594-2.379v.199l3.57 7.133c2.641 4.254 7.324 8.699 11.297 11.699 2.059 1.555 3.68 4.242 6.344 5.152v-.199h-.199c-.516-.805-1.324-1.137-1.98-1.781-1.551-1.523-3.277-3.414-4.559-5.156-3.613-4.902-6.805-10.27-9.711-15.855-1.391-2.668-2.598-5.609-3.77-8.324-.453-1.047-.445-2.633-1.387-3.172-1.281 1.988-3.172 3.598-4.164 5.945-1.582 3.754-1.789 8.336-2.375 13.082-.348.125-.195.039-.398.199-2.762-.668-3.73-3.508-4.758-5.949-2.594-6.164-3.078-16.09-.793-23.191.59-1.836 3.262-7.617 2.18-9.316-.516-1.691-2.219-2.672-3.172-3.965-1.18-1.598-2.355-3.703-3.172-5.551-2.125-4.805-3.113-10.203-5.352-15.062-1.07-2.324-2.875-4.676-4.359-6.738-1.645-2.289-3.484-3.977-4.758-6.742-.453-.984-1.066-2.559-.398-3.566.215-.684.516-.969 1.191-1.191 1.148-.887 4.352.297 5.547.793 3.18 1.32 5.832 2.578 8.527 4.363 1.289.855 2.598 2.512 4.16 2.973h1.785c2.789.641 5.914.195 8.523.988 4.609 1.402 8.738 3.582 12.488 5.949 11.422 7.215 20.766 17.48 27.156 29.734 1.027 1.973 1.473 3.852 2.379 5.945 1.824 4.219 4.125 8.559 5.941 12.688 1.816 4.113 3.582 8.27 6.148 11.695 1.348 1.801 6.551 2.766 8.918 3.766 1.66.699 4.379 1.43 5.949 2.379 3 1.809 5.906 3.965 8.723 5.945 1.402.992 5.73 3.168 5.945 4.957zm-88.605-75.52c-1.453-.027-2.48.156-3.566.395v.199h.195c.695 1.422 1.918 2.34 2.777 3.566l1.98 4.164.199-.195c1.227-.867 1.789-2.25 1.781-4.363-.492-.52-.562-1.164-.992-1.785-.562-.824-1.66-1.289-2.375-1.98zm0 0" />
         </svg>
       );
     case 'mongodb':
@@ -570,6 +576,12 @@ function TechIcon({ type }) {
         <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
           <circle cx="64" cy="64" r="60" fill="#D81B60" />
           <path d="M42 36h28c11 0 18 6 18 16 0 8-5 13-12 15l15 25H77L64 69H54v23H42V36zm12 23h15c5 0 8-3 8-7s-3-7-8-7H54v14z" fill="#FAF5EA" />
+        </svg>
+      );
+    case 'redux':
+      return (
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#764ABC" d="M88.69 88.11c-9 18.4-24.76 30.78-45.61 34.85a39.73 39.73 0 0 1-9.77 1.14c-12 0-23-5-28.34-13.19C-2.2 100-4.64 76.87 19 59.76c.48 2.61 1.46 6.19 2.11 8.31A38.24 38.24 0 0 0 10 81.1c-4.4 8.64-3.91 17.27 1.3 25.25 3.6 5.38 9.3 8.65 16.63 9.65a44 44 0 0 0 26.55-5c12.71-6.68 21.18-14.66 26.72-25.57a9.32 9.32 0 0 1-2.61-6A9.12 9.12 0 0 1 87.37 70h.34a9.15 9.15 0 0 1 1 18.25zm28.67-20.2c12.21 13.84 12.54 30.13 7.82 39.58-4.4 8.63-16 17.27-31.6 17.27a50.48 50.48 0 0 1-21-5.05c2.29-1.63 5.54-4.24 7.33-5.87a41.54 41.54 0 0 0 16 3.42c10.1 0 17.75-4.72 22.31-13.35 2.93-5.7 3.1-12.38.33-19.22a43.61 43.61 0 0 0-17.27-20.85 62 62 0 0 0-34.74-10.59h-2.93a9.21 9.21 0 0 1-8 5.54h-.31a9.13 9.13 0 0 1-.3-18.25h.33a9 9 0 0 1 8 4.89h2.61c20.8 0 39.06 7.98 51.42 22.48zm-82.75 23a7.31 7.31 0 0 1 1.14-4.73c-9.12-15.8-14-35.83-6.51-56.68C34.61 13.83 48.13 3.24 62.79 3.24c15.64 0 31.93 13.69 33.88 40.07-2.44-.81-6-2-8.14-2.44-.53-8.63-7.82-30.13-25.09-29.81-6.19.17-15.31 3.1-20 9.12a43.69 43.69 0 0 0-9.64 25.25 59.61 59.61 0 0 0 8.47 36.16 2.75 2.75 0 0 1 1.14-.16h.32a9.121 9.121 0 0 1 .33 18.24h-.33a9.16 9.16 0 0 1-9.12-8.79z" />
         </svg>
       );
     default:
@@ -988,6 +1000,10 @@ export default function App() {
                 <span className="tech-pill-badge">
                   <TechIcon type="bootstrap" />
                   Bootstrap
+                </span>
+                <span className="tech-pill-badge">
+                  <TechIcon type="redux" />
+                  Redux / Toolkit
                 </span>
                 <span className="tech-pill-badge">
                   <TechIcon type="rxjs" />
