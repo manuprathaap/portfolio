@@ -58,8 +58,17 @@ export const FEATURED_TOOLS = [
   { name: 'React.js', role: 'Modern Hooks, Ecosystem', iconType: 'react' },
   { name: 'Next.js', role: 'SSR, App Router, Hybrid', iconType: 'nextjs' },
   { name: 'TypeScript', role: 'Strict Typing, Interfaces', iconType: 'typescript' },
+  { name: 'JavaScript', role: 'ES6+, Async, DOM & Web APIs', iconType: 'javascript' },
+  { name: 'HTML5', role: 'Semantic Markup, A11y, SEO', iconType: 'html5' },
+  { name: 'CSS3 / SCSS', role: 'Flexbox, Grid, Animations', iconType: 'css3' },
+  { name: 'Angular Material', role: 'Material 3, CDK, Theming', iconType: 'material' },
+  { name: 'PrimeNG', role: 'Enterprise UI Suite, DataTables', iconType: 'primeng' },
+  { name: 'Bootstrap', role: 'Responsive Grid & UI Components', iconType: 'bootstrap' },
   { name: 'Node.js', role: 'Express, REST, APIs', iconType: 'nodejs' },
   { name: 'Python', role: 'FastAPI, Data Science', iconType: 'python' },
+  { name: 'MySQL', role: 'Relational DB, Queries & Indexing', iconType: 'mysql' },
+  { name: 'MongoDB', role: 'NoSQL, Aggregations & Atlas', iconType: 'mongodb' },
+  { name: 'Docker', role: 'Containers, Compose & CI/CD', iconType: 'docker' },
   { name: 'Firebase', role: 'Firestore, Auth, PWA', iconType: 'firebase' },
   { name: 'RxJS / NgRx', role: 'Reactive State & Observables', iconType: 'rxjs' }
 ];
@@ -435,6 +444,125 @@ function TechIcon({ type }) {
           <path d="M19.4 97.4L64 123.1 9.4 97.4z" fill="#F57C00" />
           <path d="M64 123.1l44.6-25.7L94.2 46.1c-.8-2.7-3.7-4.2-6.4-3.4-1.2.4-2.2 1.2-2.7 2.3L64 90.7 44.5 53.6c-1.3-2.5-.3-5.6 2.2-6.9 1.1-.6 2.4-.7 3.6-.3l13.7 51z" fill="#FFCA28" />
           <path d="M108.6 97.4L64 123.1l44.6-25.7z" fill="#FFA000" />
+        </svg>
+      );
+    case 'mysql':
+      return (
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#00758F" d="M115.5 69.3c-1.1-.3-6.5-1.9-10.4 2.1-4.7 4.8-3.4 12.9-1.9 17.5.3 1.1.2 1.4-.4 1.7-2.6 1.4-7.2 2.6-11.4.7-6.2-2.8-6.7-9.5-6.6-12.8.2-5.4 2.2-10.2 4.1-14.9 2.5-6.1 5.3-12.5 5.5-19.4.1-3.6-.8-8.1-3.8-10.5-3.3-2.6-8-2.6-11.7-1.8-6.9 1.5-12.7 5.7-17.5 10.7-9.7 10.1-15.3 23.3-22.1 35.8-2.5 4.6-5.5 9.4-9.8 12.4-5.2 3.6-12.1 4.5-18.1 2.3-4.1-1.5-7.7-4.5-9.8-8.4-2.8-5.2-3.1-11.7-1.3-17.3 1.9-5.9 6-10.7 11.2-13.8 5.7-3.4 12.6-4.5 19.1-3.3 2.1.4 4.3 1 6.3 1.9 1.1.5 2.3-.2 2.3-1.4 0-.8-.5-1.5-1.3-1.8-4.2-1.7-8.8-2.5-13.4-2.3-7.8.3-15.5 3.3-21.1 8.8-6.1 6-9.5 14.3-9.5 22.9 0 7.3 2.6 14.6 7.4 20.1 5.5 6.3 13.8 9.8 22.2 9.4 8.7-.4 16.8-4.8 22.3-11.5 5.2-6.3 8.3-14.1 11.8-21.8 5.5-12.1 11.8-24.1 21.6-33.4 4.1-3.9 9-6.9 14.6-7.9 4-.7 8.3-.3 11.8 1.9 3.5 2.2 5 6.5 4.8 10.6-.3 6.4-3 12.2-5.4 18-2.2 5.3-4.5 10.8-4.8 16.7-.4 7.6 3.1 15.1 10.1 18.4 5.7 2.7 12.5 2.1 17.8-.8 3.5-1.9 5.8-5.3 7-9.1 1.6-4.9 1.9-10.4.4-15.4-1.1-3.5-3.6-7.3-7.2-8.3z"/>
+          <path fill="#F29111" d="M49.2 44.5c2.8-1.5 6-2.1 9.1-1.7 3.3.4 6.4 1.8 8.8 4.1 1.2 1.1 3 .9 4.1-.3 1.1-1.2.9-3-.3-4.1-3.3-3.1-7.6-5-12-5.5-4.2-.5-8.6.3-12.4 2.3-1.4.7-2 2.5-1.2 3.9.7 1.4 2.4 2 3.9 1.3z"/>
+        </svg>
+      );
+    case 'mongodb':
+      return (
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+          <path d="M64 4c-2.3 2.9-19.4 25.5-19.4 57.5 0 25.5 12.6 44.7 18.2 52.4.6.8 1.8.8 2.4 0 5.6-7.7 18.2-26.9 18.2-52.4C83.4 29.5 66.3 6.9 64 4z" fill="#47A248" />
+          <path d="M64 4v110c.6-.8 1.2-1.6 1.8-2.4 5.6-7.7 18.2-26.9 18.2-52.4C84 29.5 66.3 6.9 64 4z" fill="#3FA037" />
+          <path d="M64 125c-.7 0-1.4-4.5-1.4-10V62c0-5.5.7-10 1.4-10s1.4 4.5 1.4 10v53c0 5.5-.7 10-1.4 10z" fill="#E8F5E9" opacity="0.8" />
+        </svg>
+      );
+    case 'docker':
+      return (
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+          <path d="M124.6 57.6c-1.3-1-6.1-2.2-12.3.8-1.5-5.5-5.3-9.5-5.6-9.8l-2.4-2.1-1.6 2.7c-3.1 5.4-4.1 11.7-2.8 17.5-3.3 1.8-8.2 3.3-14.6 3.3H8.3c-2.4 9.4.2 19.4 6.7 27.2 9 10.8 23.8 16.9 44.5 16.9 34.6 0 59.8-16.7 65.6-43.2 5.8-.3 10.7-3.3 12.6-5.8l1.3-1.7-1.4-1.6c-.6-.7-6.2-7-13-4.1z" fill="#2496ED" />
+          <g fill="#2496ED">
+            <rect x="32" y="50" width="12" height="12" rx="1.5" />
+            <rect x="47" y="50" width="12" height="12" rx="1.5" />
+            <rect x="62" y="50" width="12" height="12" rx="1.5" />
+            <rect x="77" y="50" width="12" height="12" rx="1.5" />
+            <rect x="32" y="35" width="12" height="12" rx="1.5" />
+            <rect x="47" y="35" width="12" height="12" rx="1.5" />
+            <rect x="62" y="35" width="12" height="12" rx="1.5" />
+            <rect x="62" y="20" width="12" height="12" rx="1.5" />
+          </g>
+        </svg>
+      );
+    case 'javascript':
+      return (
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+          <rect width="128" height="128" rx="8" fill="#F7DF1E" />
+          <path d="M72.2 99.6c2.5 4.3 6 7.6 11.7 7.6 5.2 0 8.5-2.6 8.5-6.3 0-4.4-3.5-6-9.5-8.6l-3.3-1.4c-9.6-4.1-16-9.2-16-20.2 0-10.1 7.7-17.7 19.8-17.7 8.6 0 14.8 3.3 19 10.9l-8.6 5.5c-2-3.6-4.3-5.2-8.5-5.2-3.8 0-6.2 2.4-6.2 5.5 0 3.8 2.4 5.3 8 7.7l3.3 1.4c11.3 4.9 18.2 9.8 18.2 21.3 0 12.2-9.6 18.7-22.3 18.7-12.5 0-20.4-6-24-13.8l9.9-4.9zm-43.2.7c1.7 3 3.9 5.5 7.9 5.5 4.1 0 6.7-1.6 6.7-7.9V54h12.5v44c0 12.8-7.5 18.4-18.7 18.4-10.1 0-16.1-5.2-19.4-12.8l11-5.3z" fill="#000000" />
+        </svg>
+      );
+    case 'html5':
+      return (
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 116.5L8.5 0h111L109 116.5 64 128l-45-11.5z" fill="#E34F26" />
+          <path d="M64 117.8l36.5-9.8 8.6-96.5H64v106.3z" fill="#EF652A" />
+          <path d="M64 51.5h-18l-1.3-14.2H64V23.7H30.4l3.6 41.5H64V51.5zm0 33.7l-.2.1-15.3-4.1-1-11.1H33.8l1.9 21.8L64 99.4V85.2z" fill="#EBEBEB" />
+          <path d="M63.8 51.5V65.2H80l-1.5 16.9-14.7 4V100l28.2-7.8 3.8-42.7H63.8v2zM63.8 23.7v13.6h33.6l1.2-13.6H63.8z" fill="#FFFFFF" />
+        </svg>
+      );
+    case 'css3':
+      return (
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 116.5L8.5 0h111L109 116.5 64 128l-45-11.5z" fill="#1572B6" />
+          <path d="M64 117.8l36.5-9.8 8.6-96.5H64v106.3z" fill="#33A9DC" />
+          <path d="M64 51.7H50.8L50 42.6H64V29H34.4l2.4 27h27.2V51.7zm0 33.9l-.2.1-15.3-4.1-1-11.1H33.8l1.9 21.8L64 99.7V85.6z" fill="#EBEBEB" />
+          <path d="M63.8 51.7v13.6H78.4l-1.4 15.3-13.2 3.6V98l26.2-7.3 3.6-40.4H63.8v1.4zm0-22.7v13.6h31.2l1.2-13.6H63.8z" fill="#FFFFFF" />
+        </svg>
+      );
+    case 'bootstrap':
+      return (
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+          <rect width="128" height="128" rx="28" fill="#7952B3" />
+          <path d="M43.5 32h24.7c8.1 0 14.1 1.9 18.1 5.6 3.9 3.6 5.8 8.6 5.8 14.8 0 4.5-1.1 8.3-3.4 11.4-2.3 3.1-5.7 5.3-10.1 6.6v.5c5.3 1.1 9.4 3.6 12.2 7.3 2.8 3.7 4.2 8.4 4.2 14.2 0 6.9-2.2 12.4-6.5 16.5-4.3 4.1-10.6 6.1-18.9 6.1H43.5V32zm14.6 27.2h8.8c4 0 7-.9 8.9-2.6 1.9-1.8 2.9-4.3 2.9-7.6 0-3.1-.9-5.4-2.8-7-1.9-1.6-4.9-2.4-8.9-2.4h-8.9v19.6zm0 43.6h9.9c4.5 0 7.9-1 10.1-3 2.2-2 3.3-4.9 3.3-8.8 0-3.8-1.1-6.7-3.4-8.8-2.3-2.1-5.8-3.1-10.7-3.1h-9.2v23.7z" fill="#FFFFFF" />
+        </svg>
+      );
+    case 'material':
+      return (
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="64,8 10,28 18,92 64,120 110,92 118,28" fill="#0081CB" />
+          <polygon points="64,8 64,20 64,106 64,120 110,92 118,28" fill="#005B9F" />
+          <path d="M64,30 L38,88 L50,88 L55,75 L73,75 L78,88 L90,88 Z M64,50 L70,64 L58,64 Z" fill="#FFFFFF" />
+          <circle cx="64" cy="98" r="5" fill="#FFCA28" />
+        </svg>
+      );
+    case 'primeng':
+      return (
+        <svg viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Angular style split shield */}
+          <polygon points="125,25 31.9,58.2 46.1,186.3 125,230" fill="#DD0031" />
+          <polygon points="125,25 125,230 203.9,186.3 218.1,58.2" fill="#BA002C" />
+
+          {/* Top Crown / Helmet Crest */}
+          {/* Left top fins */}
+          <polygon points="75,62 89,62 89,84 75,81" fill="#FFFFFF" />
+          <polygon points="93,62 105,62 105,86 93,84" fill="#FFFFFF" />
+          <polygon points="109,62 121,62 121,88 109,87" fill="#FFFFFF" />
+          {/* Right top fins */}
+          <polygon points="129,62 141,62 141,87 129,88" fill="#FFFFFF" />
+          <polygon points="145,62 157,62 157,84 145,86" fill="#FFFFFF" />
+          <polygon points="161,62 175,62 175,81 161,84" fill="#FFFFFF" />
+
+          {/* Main Forehead / Brow Armor */}
+          <polygon points="56,80 121,88 121,118 107,118 78,103 62,109" fill="#FFFFFF" />
+          <polygon points="194,80 129,88 129,118 143,118 172,103 188,109" fill="#FFFFFF" />
+
+          {/* Cheek Armor Blocks */}
+          <polygon points="65,114 90,126 90,166 65,150" fill="#FFFFFF" />
+          <polygon points="185,114 160,126 160,166 185,150" fill="#FFFFFF" />
+
+          {/* Lower Jaw Blocks */}
+          <polygon points="79,168 93,176 93,200 79,190" fill="#FFFFFF" />
+          <polygon points="171,168 157,176 157,200 171,190" fill="#FFFFFF" />
+
+          {/* Flank tabs next to chin */}
+          <polygon points="96,197 106,204 106,216 96,208" fill="#FFFFFF" />
+          <polygon points="154,197 144,204 144,216 154,208" fill="#FFFFFF" />
+
+          {/* Central Nose & Mouth Mask */}
+          <polygon points="125,120 96,135 94,172 110,210 140,210 156,172 154,135" fill="#FFFFFF" />
+
+          {/* Mouth Vents / Grille Lines */}
+          {/* Left red vents */}
+          <polygon points="98,162 117,175 117,179 98,167" fill="#DD0031" />
+          <polygon points="98,177 117,190 117,194 98,182" fill="#DD0031" />
+          <polygon points="102,192 117,203 117,207 102,197" fill="#DD0031" />
+          {/* Right red vents */}
+          <polygon points="152,162 133,175 133,179 152,167" fill="#BA002C" />
+          <polygon points="152,177 133,190 133,194 152,182" fill="#BA002C" />
+          <polygon points="148,192 133,203 133,207 148,197" fill="#BA002C" />
         </svg>
       );
     case 'rxjs':
@@ -816,6 +944,42 @@ export default function App() {
                   Python
                 </span>
                 <span className="tech-pill-badge">
+                  <TechIcon type="mysql" />
+                  MySQL
+                </span>
+                <span className="tech-pill-badge">
+                  <TechIcon type="mongodb" />
+                  MongoDB
+                </span>
+                <span className="tech-pill-badge">
+                  <TechIcon type="docker" />
+                  Docker
+                </span>
+                <span className="tech-pill-badge">
+                  <TechIcon type="javascript" />
+                  JavaScript
+                </span>
+                <span className="tech-pill-badge">
+                  <TechIcon type="html5" />
+                  HTML5
+                </span>
+                <span className="tech-pill-badge">
+                  <TechIcon type="css3" />
+                  CSS3 / SCSS
+                </span>
+                <span className="tech-pill-badge">
+                  <TechIcon type="material" />
+                  Angular Material
+                </span>
+                <span className="tech-pill-badge">
+                  <TechIcon type="primeng" />
+                  PrimeNG
+                </span>
+                <span className="tech-pill-badge">
+                  <TechIcon type="bootstrap" />
+                  Bootstrap
+                </span>
+                <span className="tech-pill-badge">
                   <TechIcon type="rxjs" />
                   RxJS & NgRx
                 </span>
@@ -965,17 +1129,32 @@ export default function App() {
           </p>
         </div>
 
-        {/* Large Highlighted Tool Tiles */}
-        <div className="featured-tools-grid">
-          {FEATURED_TOOLS.map((tool, idx) => (
-            <div className="featured-tool-card" key={idx}>
-              <div className="featured-tool-icon">
-                <TechIcon type={tool.iconType} />
-              </div>
-              <div className="featured-tool-name">{tool.name}</div>
-              <div className="featured-tool-role">{tool.role}</div>
+        {/* Infinite Scrolling Tech Showcase Marquee */}
+        <div className="tools-marquee-container" aria-label="Featured technical toolbox marquee">
+          <div className="tools-marquee-track">
+            <div className="tools-marquee-group">
+              {FEATURED_TOOLS.map((tool, idx) => (
+                <div className="featured-tool-card marquee-card" key={`tool-1-${idx}`}>
+                  <div className="featured-tool-icon">
+                    <TechIcon type={tool.iconType} />
+                  </div>
+                  <div className="featured-tool-name">{tool.name}</div>
+                  <div className="featured-tool-role">{tool.role}</div>
+                </div>
+              ))}
             </div>
-          ))}
+            <div className="tools-marquee-group" aria-hidden="true">
+              {FEATURED_TOOLS.map((tool, idx) => (
+                <div className="featured-tool-card marquee-card" key={`tool-2-${idx}`}>
+                  <div className="featured-tool-icon">
+                    <TechIcon type={tool.iconType} />
+                  </div>
+                  <div className="featured-tool-name">{tool.name}</div>
+                  <div className="featured-tool-role">{tool.role}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Full Toolbox with Grouped Chips */}
