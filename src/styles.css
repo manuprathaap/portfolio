@@ -124,19 +124,86 @@ img, svg {
 }
 
 /* ==========================================================================
-   Sticky Navigation
+   Sticky Navigation Wrapper & Independent Floating Nav
    ========================================================================== */
-.site-nav {
+.nav-wrapper {
   position: sticky;
   top: 0;
   width: 100%;
   height: var(--header-height);
-  background-color: rgba(250, 245, 234, 0.92);
+  z-index: 900;
+  pointer-events: none;
+}
+
+.site-nav {
+  pointer-events: auto;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  transition: 
+    width 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    margin-top 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    border-radius 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    border 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* State 1: Normal Nav (at Hero Page / Top) */
+.site-nav.nav-normal {
+  width: 100%;
+  height: var(--header-height);
+  margin-top: 0;
+  border-radius: 0;
+  background-color: rgba(250, 245, 234, 0.95);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-light);
-  z-index: 900;
-  transition: background-color var(--transition-base), border-color var(--transition-base);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  box-shadow: none;
+}
+
+/* State 2: Independent Floating Nav (While Scrolling) */
+.site-nav.nav-independent {
+  margin-top: 36px;
+  width: min(1180px, calc(100% - 48px));
+  height: 68px;
+  border-radius: 50px;
+  background-color: rgba(255, 253, 248, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(220, 210, 195, 0.85);
+  box-shadow: 
+    0 20px 48px -8px rgba(40, 30, 25, 0.16),
+    0 8px 18px -2px rgba(40, 30, 25, 0.08);
+}
+
+.site-nav.nav-independent .nav-inner {
+  padding: 0 32px;
+}
+
+.site-nav.nav-independent .brand-badge {
+  width: 38px;
+  height: 38px;
+  font-size: 1.02rem;
+}
+
+.site-nav.nav-independent .brand-name {
+  font-size: 1.1rem;
+}
+
+.site-nav.nav-independent .nav-cta-btn {
+  padding: 10px 22px;
+  font-size: 0.88rem;
+}
+
+.site-nav.nav-independent .nav-link {
+  font-size: 0.9rem;
+  padding: 8px 4px;
 }
 
 .nav-inner {
@@ -1791,6 +1858,17 @@ img, svg {
 
   .mobile-menu-toggle {
     display: block;
+  }
+
+  .site-nav.nav-independent {
+    margin-top: 20px;
+    width: calc(100% - 24px);
+    height: 60px;
+    border-radius: 40px;
+  }
+
+  .site-nav.nav-independent .nav-inner {
+    padding: 0 20px;
   }
 
   .mobile-nav-drawer {

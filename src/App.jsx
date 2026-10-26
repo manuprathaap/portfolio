@@ -655,6 +655,7 @@ export default function App() {
   // Scroll Progress State
   const [scrollProgress, setScrollProgress] = useState(0);
   const [litWordCount, setLitWordCount] = useState(0);
+  const [isNavIndependent, setIsNavIndependent] = useState(false);
   
   // Stat animated counters state
   const [hasAnimatedStats, setHasAnimatedStats] = useState(false);
@@ -686,6 +687,10 @@ export default function App() {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
       
+      // 0. Sticky Independent Nav: Normal at hero, independent floating pill while scrolling
+      const isPastHero = scrollTop > 90;
+      setIsNavIndependent(isPastHero);
+
       // 1. Overall Page Progress (0 to 100%)
       const progress = scrollHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100)) : 0;
       setScrollProgress(progress);
@@ -820,66 +825,71 @@ export default function App() {
       {/* ----------------------------------------------------------------------
           STICKY TOP NAVIGATION
           ---------------------------------------------------------------------- */}
-      <nav className="site-nav" aria-label="Main Navigation">
-        <div className="nav-inner">
-          <a href="#" className="nav-brand" aria-label="Manu Prathap Home">
-            <div className="brand-badge">MP</div>
-            <span className="brand-name">{PERSONAL_INFO.name}</span>
-          </a>
-
-          <ul className="nav-links">
-            <li><a href="#stats" className="nav-link">Overview</a></li>
-            <li><a href="#tools" className="nav-link">Toolbox</a></li>
-            <li><a href="#work" className="nav-link">Work & Projects</a></li>
-            <li><a href="#ai-learning" className="nav-link">AI & Agentic</a></li>
-            <li><a href="#education" className="nav-link">Education</a></li>
-            <li><a href="#contact" className="nav-link">Contact</a></li>
-          </ul>
-
-          <div className="nav-actions">
-            <a href="#contact" className="nav-cta-btn">
-              Hire me
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
+      <header className="nav-wrapper" aria-label="Navigation Header">
+        <nav
+          className={`site-nav ${isNavIndependent ? 'nav-independent' : 'nav-normal'}`}
+          aria-label="Main Navigation"
+        >
+          <div className="nav-inner">
+            <a href="#" className="nav-brand" aria-label="Manu Prathap Home">
+              <div className="brand-badge">MP</div>
+              <span className="brand-name">{PERSONAL_INFO.name}</span>
             </a>
-            
-            <button
-              className="mobile-menu-toggle"
-              aria-label="Toggle navigation menu"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                {mobileMenuOpen ? (
-                  <>
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </>
-                ) : (
-                  <>
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                  </>
-                )}
-              </svg>
-            </button>
-          </div>
-        </div>
 
-        {/* Mobile Navigation Drawer */}
-        {mobileMenuOpen && (
-          <div className="mobile-nav-drawer" role="menu">
-            <a href="#stats" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Overview</a>
-            <a href="#tools" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Toolbox</a>
-            <a href="#work" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Work & Projects</a>
-            <a href="#ai-learning" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>AI & Agentic</a>
-            <a href="#education" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Education</a>
-            <a href="#contact" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+            <ul className="nav-links">
+              <li><a href="#stats" className="nav-link">Overview</a></li>
+              <li><a href="#tools" className="nav-link">Toolbox</a></li>
+              <li><a href="#work" className="nav-link">Work & Projects</a></li>
+              <li><a href="#ai-learning" className="nav-link">AI & Agentic</a></li>
+              <li><a href="#education" className="nav-link">Education</a></li>
+              <li><a href="#contact" className="nav-link">Contact</a></li>
+            </ul>
+
+            <div className="nav-actions">
+              <a href="#contact" className="nav-cta-btn">
+                Hire me
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              
+              <button
+                className="mobile-menu-toggle"
+                aria-label="Toggle navigation menu"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  {mobileMenuOpen ? (
+                    <>
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </>
+                  ) : (
+                    <>
+                      <line x1="3" y1="12" x2="21" y2="12"></line>
+                      <line x1="3" y1="6" x2="21" y2="6"></line>
+                      <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </>
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
-        )}
-      </nav>
+
+          {/* Mobile Navigation Drawer */}
+          {mobileMenuOpen && (
+            <div className="mobile-nav-drawer" role="menu">
+              <a href="#stats" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Overview</a>
+              <a href="#tools" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Toolbox</a>
+              <a href="#work" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Work & Projects</a>
+              <a href="#ai-learning" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>AI & Agentic</a>
+              <a href="#education" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Education</a>
+              <a href="#contact" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+            </div>
+          )}
+        </nav>
+      </header>
 
       {/* ----------------------------------------------------------------------
           SECTION 1: HERO BANNER (Standard, No Animation)
